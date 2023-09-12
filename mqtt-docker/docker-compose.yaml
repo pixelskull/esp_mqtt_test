@@ -1,0 +1,14 @@
+version: "3"
+
+services:
+  mosquitto:
+    container_name: mosquitto
+    image: eclipse-mosquitto
+    command: mosquitto -c /mosquitto-no-auth.conf
+    ports: 
+      - 1883:1883
+    volumes:
+      - ./conf:/mosquitto/conf
+      - ./data:/mosquitto/data
+      - ./log:/mosquitto/log
+
